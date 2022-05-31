@@ -1,0 +1,24 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+    обавление статьи
+{% endblock %}
+
+{% block content %}
+    <h1>обавление статьи</h1>
+    <form method="post" class="form-register auth">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="bnt-outline-warning" type="submit">Добавить статью</button>
+    <hr>
+    <p>Уже зарегестрированны?<a href="{% url 'user' %}">Войти в личный кабинет</a></p>
+    </form>
+
+{% endblock %}
+
+
+ {% block aside_block %}
+     <h4> Облака </h4>
+     <img src="https://c.pxhere.com/photos/44/ca/cumulus_nimbus_cloud_white_large_dramatic_weather_sky_australia-781881.jpg!d" class="img-thumbnail">
+
+ {% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+    lобавление задание
+{% endblock %}
+
+{% block content %}
+    <h1>обавление задания</h1>
+    <form method="post" class="form-register auth">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="bnt-outline-warning" type="submit">Добавить Заlание</button>
+    <hr>
+    </form>
+
+{% endblock %}

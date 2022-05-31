@@ -1,0 +1,22 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+
+
+        {% for post in tusk %}
+            <div class="alert alert-light">
+                <hi>{{ post.variable }}</hi>
+                <p>{{ post.text }}</p>
+
+            </div>
+
+        {% endfor %}
+            <a href="{% url 'tusk-variable' count   %} " class="ml-2">
+{           <button class="btn btn-outline-info">Получть вариант</button>
+            </a>
+
+    {% endblock %}

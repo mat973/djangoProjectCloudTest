@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+    Вы успешно вышли
+{% endblock %}
+
+{% block content %}
+    <h1>Вы успешно вышли</h1>
+    <a href="{% url 'user' %}">Войти в личный кабинет снова</a>
+{% endblock %}
+
+
+ {% block aside_block %}
+     <h4> Облака </h4>
+     <img src="https://c.pxhere.com/photos/44/ca/cumulus_nimbus_cloud_white_large_dramatic_weather_sky_australia-781881.jpg!d" class="img-thumbnail">
+
+ {% endblock %}

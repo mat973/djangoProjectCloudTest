@@ -1,0 +1,44 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{#{% block content %}#}
+{#    <h1>{{ title }}</h1>#}
+{#    {% for post in news %}#}
+{#        <h3>{{ post.title }}</h3>#}
+{#        <p>{{ post.text }} </p>#}
+{#        {% if post.avtor %}#}
+{##}
+{#            <p>Автор:{{ post.avtor }}, дата:{{ post.date }} </p>#}
+{#        {% else %}#}
+{#            <p>Автор:<b>Админ</b>, дата:{{ post.date }} </p>#}
+{#        {% endif %}#}
+{#    {% endfor %}#}
+{#{% endblock %}#}
+
+    {% block content %}
+
+        {% for post in news %}
+            <div class="alert alert-light">
+                <hi>{{ post.title }}</hi>
+                <p>{{ post.text }}</p>
+                <div class="row">
+                    <div>
+                        <img src="{{ post.avtor.profile.img.url }}" alt="post.avtor" class="user_images">
+
+                    </div>
+
+
+                </div>
+                <span class="text-muted">Публикация:{{post.date|date:"d E Y в H:i"}}</span>
+            <a href="{% url 'news-detail' post.id %}"class="btn-outline-warning mt-3">читать далее</a>
+            </div>
+        {% endfor %}
+    {% endblock %}
+
+ {% block aside_block %}
+     <img src="https://c.pxhere.com/photos/44/ca/cumulus_nimbus_cloud_white_large_dramatic_weather_sky_australia-781881.jpg!d" class="img-thumbnail">
+     <h4> Облака </h4>
+ {% endblock %}

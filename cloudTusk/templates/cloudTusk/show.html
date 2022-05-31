@@ -1,0 +1,23 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+
+
+        {% for post in answer %}
+            <div class="alert alert-light">
+                <h1>{{ post.variable }}</h1>
+                <h2>{{ post.text }}</h2>
+                <h3>{{ post.answer }}</h3>
+                <p>{{ post.user.username }}</p>
+
+
+            </div>
+
+        {% endfor %}
+
+
+    {% endblock %}
